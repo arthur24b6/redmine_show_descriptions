@@ -1,1 +1,11 @@
-<%= check_box :query, :show_desc, {}, '1', '0' %><%= l(:label_show_description_plural) %>
+<%= l(:label_show_description_plural) %>
+<%
+
+options = [
+  [l(:label_show_description_plural_none), false],
+  [l(:label_show_description_plural), 'partial'],
+  [l(:label_show_description_plural_with_attachments), 'attachments']
+]
+%>
+<%= select :query, :show_desc, options %>
+<%= check_box :query, :show_desc_collapsed, {}, '1', '0' %><%= l(:label_show_description_collapsed) %>

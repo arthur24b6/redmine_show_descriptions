@@ -37,13 +37,14 @@
 <% end %>
 </fieldset>
 
-<fieldset><legend><%= l(:label_rendering_parameter_plural) %></legend>
-  <%= render :partial => 'queries/custom_params', :locals => {:query => query}%>
-</fieldset>
-
 <% content_tag 'fieldset', :id => 'columns', :style => (query.has_default_columns? ? 'display:none;' : nil) do %>
 <legend><%= l(:field_column_names) %></legend>
 <%= render :partial => 'queries/columns', :locals => {:query => query}%>
 <% end %>
+
+<fieldset>
+  <legend><%= l(:label_rendering_parameter_plural) %></legend>
+  <%= render :partial => 'queries/custom_params', :locals => {:query => query}%>
+</fieldset>
 
 </div>

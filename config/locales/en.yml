@@ -1,3 +1,8 @@
 en:
-  label_rendering_parameter_plural: Rendering parameters
+  label_rendering_parameter_plural: Display options
   label_show_description_plural: Show descriptions
+  label_show_description_plural_none: None
+  label_show_description_plural: Issue description
+  label_show_description_plural_with_attachments: Issue description with attachments
+  label_show_description_collapsed: Collapsed
+

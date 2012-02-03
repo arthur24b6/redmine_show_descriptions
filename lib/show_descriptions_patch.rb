@@ -4,6 +4,7 @@ module ShowDescriptionsPatch
       base.send(:include, InstanceMethods)
       base.class_eval do
         alias_method_chain :retrieve_query, :show_desc
+        alias_method_chain :retrieve_query, :show_desc_collapsed
       end
     end
 
@@ -11,7 +12,16 @@ module ShowDescriptionsPatch
       def retrieve_query_with_show_desc
         retrieve_query_without_show_desc
         if params[:query]
-          @query.show_desc = params[:query][:show_desc] == "1" ? true : false
+          @query.show_desc = params[:query][:show_desc]
+        else
+          @query.show_desc = (@query.show_desc == '' || @query.show_desc == 'false' ) ? false : true
+        end
+      end
+
+      def retrieve_query_with_show_desc_collapsed
+        retrieve_query_without_show_desc_collapsed
+        if params[:query]
+          @query.show_desc_collapsed = params[:query][:show_desc_collapsed]
         end
       end
     end
