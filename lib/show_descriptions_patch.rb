@@ -14,7 +14,7 @@ module ShowDescriptionsPatch
         if params[:query]
           @query.show_desc = params[:query][:show_desc]
         else
-          @query.show_desc = (@query.show_desc == '' || @query.show_desc == 'false' ) ? false : true
+          @query.show_desc = (@query.show_desc == '' || @query.show_desc == 'false' ) ? false : @query.show_desc
         end
       end
 
